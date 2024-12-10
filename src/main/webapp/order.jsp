@@ -1,12 +1,10 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
-<%@taglib uri="jakarta.tags.core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Listing</title>
+    <title>Order Product</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* General Styling */
@@ -76,57 +74,56 @@
             font-weight: bold;
         }
 
-        /* Product Listing */
-        .product-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .product-card {
+        .order-card {
             background-color: #fafafa;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .product-card:hover {
+        .order-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
-        .product-card img {
-            width: 100%;
+        .order-card img {
+            width: 200px;
             height: 200px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 15px;
         }
 
-        .product-card h3 {
+        .order-info {
+            flex-grow: 1;
+            padding-left: 20px;
+        }
+
+        .order-info h3 {
             color: #388e3c;
-            font-size: 20px;
-            margin: 10px 0;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
 
-        .product-card p {
+        .order-info p {
             color: #555;
-            font-size: 14px;
-            margin: 8px 0;
+            font-size: 16px;
+            margin: 5px 0;
         }
 
-        .product-card .price {
+        .price {
             color: #2c6e49;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
         }
 
         .button-container {
             display: flex;
-            justify-content: space-around;
+            gap: 15px;
             align-items: center;
-            margin-top: 20px;
         }
 
         .button-container button,
@@ -160,29 +157,13 @@
         footer p {
             margin: 0;
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar .brand {
-                font-size: 20px;
-            }
-
-            .navbar-links a {
-                font-size: 14px;
-                padding: 8px 10px;
-            }
-
-            h2 {
-                font-size: 28px;
-            }
-        }
     </style>
 </head>
 
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <div class="brand">Product Listing</div>
+        <div class="brand">Product Order</div>
         <div class="navbar-links">
             <a href="buyer-dashboard.jsp"><i class="fas fa-home"></i> Home</a>
             <a href="AboutUs1.jsp"><i class="fas fa-info-circle"></i> About</a>
@@ -192,31 +173,27 @@
 
     <!-- Main Container -->
     <div class="container">
-        <h2>Our Products</h2>
-        <div class="product-list">
-            <c:forEach items="${products}" var="product">
-                <div class="product-card">
-                    <img src="displayproductimage?id=${product.id}" alt="Product Image">
-                    <h3><c:out value="${product.name}"></c:out></h3>
-                    <p><strong>Product ID:</strong> <c:out value="${product.id}"></c:out></p>
-                    <p><strong>Description:</strong> <c:out value="${product.description}"></c:out></p>
-                    <p class="price"><strong>Price:</strong> Rs. <c:out value="${product.cost}"></c:out></p>
-                    <p><strong>Farmer Contact:</strong> <c:out value="${product.farmer.contactno}"></c:out></p>
-                    <div class="button-container">
-                        <form action="addtocart" method="post">
-                            <input type="hidden" name="productId" value="${product.id}">
-                            <button type="submit">Add to Cart</button>
-                        </form>
-                        <a href="/order/${product.id}">Order</a>
-                    </div>
-                </div>
-            </c:forEach>
+        <h2>Order Details</h2>
+        <div class="order-card">
+            <img src="/productimage?id=${product.id}" alt="Product Image">
+            <div class="order-info">
+                <h3>${product.name}</h3>
+                <p><strong>Product ID:</strong> ${product.id}</p>
+                <p><strong>Description:</strong> ${product.description}</p>
+                <p class="price">Price: Rs. ${product.cost}</p>
+                <p><strong>Farmer Contact:</strong> ${product.farmer.contactno}</p>
+            </div>
+            <div class="button-container">
+                <form method="post" action="/confirm/${product.id}">
+                    <button type="submit">Confirm Purchase</button>
+                </form>
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Product Listing. All Rights Reserved.</p>
+        <p>&copy; 2024 Product Order. All Rights Reserved.</p>
     </footer>
 </body>
 

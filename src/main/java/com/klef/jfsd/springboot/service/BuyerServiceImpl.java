@@ -86,6 +86,17 @@ public class BuyerServiceImpl implements BuyerService{
 	}
 
 
+	
+	
+	
+	
+	
+	
+	
+
+    public Product getProductById(Long productId) {
+        return productRepository.findById(productId).orElseThrow(() -> new RuntimeException("Product not found"));
+    }
 
 	
 	

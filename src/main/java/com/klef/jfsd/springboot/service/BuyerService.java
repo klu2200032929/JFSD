@@ -20,4 +20,8 @@ public interface BuyerService {
 	public List<Product> getProductsByBuyerLocation(String buyerLocation);
 	public String addProductToCart(Long id, Long productId);
 	public String deleteCart(Long id);
+	
+	
+	
+	public Product getProductById(Long productId);
 }

@@ -3,20 +3,19 @@ package com.klef.jfsd.springboot.controller;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.klef.jfsd.springboot.model.Cart;
+import com.klef.jfsd.springboot.model.Buyer;
+import com.klef.jfsd.springboot.model.Product;
+import com.klef.jfsd.springboot.service.BuyerService;
+import com.klef.jfsd.springboot.service.QRCodeService;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.klef.jfsd.springboot.model.Buyer;
-import com.klef.jfsd.springboot.model.Cart;
-import com.klef.jfsd.springboot.model.Farmer;
-import com.klef.jfsd.springboot.model.Product;
-import com.klef.jfsd.springboot.service.BuyerService;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -25,6 +24,10 @@ import jakarta.servlet.http.HttpSession;
 public class BuyerController {
 	@Autowired
 	private BuyerService buyerService;
+	
+	@Autowired
+	private QRCodeService qrCodeService;
+
 	
 	
 	@GetMapping("buyer-login")
@@ -189,5 +192,54 @@ public class BuyerController {
 		return "redirect:/viewcart";
 	}
 	
+	
+	
+	
+	
+	 
+
+	    // Existing methods (unchanged)...
+
+	@GetMapping("/order/{productId}")
+    public ModelAndView orderPage(@PathVariable Long productId, HttpServletRequest request) {
+        ModelAndView mv = new ModelAndView();
+        HttpSession session = request.getSession();
+        Buyer loggedBuyer = (Buyer) session.getAttribute("buyer");
+
+        if (loggedBuyer == null) {
+            mv.setViewName("buyer-login");
+            mv.addObject("message", "Please log in first!");
+            return mv;
+        }
+
+        Product product = buyerService.getProductById(productId);
+        mv.setViewName("order");
+        mv.addObject("product", product);
+        return mv;
+    }
+
+    @PostMapping("/confirm/{productId}")
+    public ResponseEntity<byte[]> confirmPurchase(@PathVariable Long productId, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        Buyer loggedBuyer = (Buyer) session.getAttribute("buyer");
+
+        if (loggedBuyer == null) {
+            return ResponseEntity.status(401).body(null); // Unauthorized
+        }
+
+        Product product = buyerService.getProductById(productId);
+
+        // Generate UPI QR code for payment
+        String upi = "upi://pay?pa=nacmadhav11042005@oksbi&pn=Anilchandramadhav Nutulapati&am=" + product.getCost() + "&cu=INR&tn=Payment for " + product.getName();
+        try {
+            byte[] qrCode = qrCodeService.generateQRCode(upi);
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.IMAGE_PNG);
+            return ResponseEntity.ok().headers(headers).body(qrCode);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().build();
+        }
+    }
 	
 }
