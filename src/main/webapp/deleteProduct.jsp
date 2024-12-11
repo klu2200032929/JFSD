@@ -5,8 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <title>DELETE PRODUCT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Universal styling */
+        /* Universal Styling */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -24,10 +25,51 @@
             padding: 20px;
         }
 
+        /* Navbar Styling */
+        .navbar {
+            background-color: #2c6e49;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 8px;
+        }
+
+        .navbar-links a:hover {
+            background-color: #1d5a39;
+            transform: scale(1.1);
+        }
+
         h3 {
             color: #009aa3;
             font-size: 2rem;
             margin-bottom: 10px;
+            margin-top: 70px;
         }
 
         h5 {
@@ -68,15 +110,32 @@
             background-color: #e0f7fa;
         }
 
-        .table-title {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1.2rem;
-            color: #555;
+        .footer {
+            margin-top: 30px;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #009aa3;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            color: #005f61;
         }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="brand">Product Management</div>
+        <div class="navbar-links">
+            <a href="javascript:history.back();"><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="AboutUs.jsp"><i class="fas fa-info-circle"></i> About</a>
+            <a href="ContactUs.jsp"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+    </div>
+
     <h3>DELETE PRODUCT</h3>
 
     <table class="table table-striped">
@@ -95,17 +154,17 @@
                 <td><c:out value="${product.cost}"></c:out></td>
                 <td><c:out value="${product.description}"></c:out></td>
                 <td>
-                	<img src="displayproductimage?id=${product.id}" alt="Product Image" height=42px width=58px>
+                    <img src="displayproductimage?id=${product.id}" alt="Product Image" height="42px" width="58px">
                 </td>
                 <td>
-                	<a href='<c:url value='delete1?id=${product.id}'></c:url>'>Delete</a>
+                    <a href='<c:url value="delete1?id=${product.id}"/>'>Delete</a>
                 </td>
             </tr>
         </c:forEach>
     </table>
 
     <div class="footer">
-            <a href="farmer-dashboard.jsp">Go back to Home</a>
+        <a href="farmer-dashboard.jsp">Go back to Home</a>
     </div>
 </body>
 </html>
