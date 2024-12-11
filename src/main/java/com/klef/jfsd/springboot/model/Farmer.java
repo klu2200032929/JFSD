@@ -26,8 +26,10 @@ public class Farmer {
     private String location;
     @Column(name = "farmer_contactno",nullable = false,unique = true,length = 10)
     private String contactno;
-    
-    
+    @Column(name="farmer_upi",nullable = false,length=60)
+    private String UPI;
+    @Column(name="farmer_upiuname",nullable = false,length=100)
+    private String upiname;
    
 	public Long getId() {
 		return id;
@@ -65,6 +67,20 @@ public class Farmer {
 	public void setContactno(String contactno) {
 		this.contactno = contactno;
 	}
+	public String getUPI() {
+		return UPI;
+	}
+	public void setUPI(String uPI) {
+		UPI = uPI;
+	}
+	public String getUpiname() {
+		return upiname;
+	}
+	public void setUpiname(String upiname) {
+		this.upiname = upiname;
+	}
 
+	
+	
 
 }

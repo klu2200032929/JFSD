@@ -158,14 +158,20 @@
             <label for="location">Location</label>
             <input type="text" id="location" name="location" placeholder="Enter your location" required>
             
+            <label for="upiid">UPIID</label>
+            <input type="text" id="upiid" name="upiid" placeholder="Enter your upi id" required>
+            
+            <label for="upiuname">UPI Uname</label>
+            <input type="text" id="upiuname" name="upiuname" placeholder="Enter your upi username" required>
+            
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Create a password" required>
 
-			
-            
             <div class="strength-message" id="strengthMessage"></div>
             <div class="error-message" id="errorMessage"></div>
-
+            
+            
+            
             <button type="submit" id="submitButton" disabled>Register</button>
         </form>
 

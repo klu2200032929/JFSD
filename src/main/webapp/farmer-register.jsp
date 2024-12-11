@@ -157,15 +157,27 @@
             <label for="contactno">Contact Number</label>
             <input type="number" id="contactno" name="contactno" placeholder="Enter your contact number" required oninput="validateContactLength()">
             
+            
+			<label for="upiid">UPIID</label>
+            <input type="text" id="upiid" name="upiid" placeholder="Enter your upi id" required>
+            
+            <label for="upiuname">UPI Uname</label>
+            <input type="text" id="upiuname" name="upiuname" placeholder="Enter your upi username" required>
+            
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Create a password" required>
-
+	
+	
+			<div class="strength-message" id="strengthMessage"></div>
+			
             <label for="confirmPassword">Confirm Password</label>
             <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
 
             <div class="strength-message" id="strengthMessage"></div>
             <div class="error-message" id="errorMessage"></div>
 
+
+			
             <button type="submit" id="submitButton" disabled>Register</button>
         </form>
 
@@ -202,7 +214,7 @@
             // Check if all fields are filled
             if (!registrationForm.username.value || !registrationForm.password.value || 
                 !registrationForm.confirmPassword.value || !registrationForm.email.value || 
-                !registrationForm.location.value || !registrationForm.contactno.value) {
+                !registrationForm.location.value || !registrationForm.contactno.value|| !registrationForm.upiuname.value|| !registrationForm.upiid.value) {
                 errorMessage.textContent = 'Please fill out all fields.';
                 errorMessage.style.display = 'block';
                 submitButton.disabled = true;

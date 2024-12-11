@@ -62,6 +62,8 @@ public class FarmerController {
         String location = request.getParameter("location");
         String contactno = request.getParameter("contactno");
         String password = request.getParameter("password");
+        String upiid=request.getParameter("upiid");
+        String upiuname=request.getParameter("upiuname");
 
         Farmer farmer = new Farmer();
         farmer.setUsername(username);
@@ -69,6 +71,9 @@ public class FarmerController {
         farmer.setLocation(location);
         farmer.setContactno(contactno);
         farmer.setPassword(password);
+        farmer.setUPI(upiid);
+        farmer.setUpiname(upiuname);
+        
 
         String message = farmerService.farmerRegistration(farmer);
         ModelAndView mv = new ModelAndView("index");
