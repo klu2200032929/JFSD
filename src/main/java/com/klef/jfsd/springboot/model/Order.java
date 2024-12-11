@@ -1,5 +1,7 @@
 package com.klef.jfsd.springboot.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -27,6 +29,24 @@ public class Order {
 	@ManyToOne(fetch = FetchType.LAZY)  // Many products belong to one farmer
 	 @JoinColumn(name = "farmer_id", nullable = false)  // Join column to link with farmer table
 	 private Farmer farmer;
+	
+	
+	private LocalDateTime orderDate;
+    private String status;
+	
+	
+	public LocalDateTime getOrderDate() {
+		return orderDate;
+	}
+	public void setOrderDate(LocalDateTime orderDate) {
+		this.orderDate = orderDate;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public Long getId() {
 		return Id;
 	}

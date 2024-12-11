@@ -102,8 +102,8 @@
     <div class="navbar">
         <div class="brand">AgriValue Connect</div>
         <div class="navbar-links">
-            <a href="buyer-dashboard.jsp"><i class="fas fa-home"></i> Home</a>
-            <a href="AboutUs1.jsp"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="admin-dashboard.jsp"><i class="fas fa-home"></i> Home</a>
+            <a href="AboutUs2.jsp"><i class="fas fa-info-circle"></i> About Us</a>
             <a href="#"><i class="fas fa-envelope"></i> Contact Us</a>
         </div>
     </div>

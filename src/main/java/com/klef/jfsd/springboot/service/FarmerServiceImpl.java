@@ -100,6 +100,4 @@ public class FarmerServiceImpl implements FarmerService{
 	}
 
 	
-
-
 }

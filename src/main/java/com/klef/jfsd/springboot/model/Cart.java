@@ -25,6 +25,7 @@ public class Cart {
 	 @JoinColumn(name = "id", nullable = false)  // Join column to link with farmer table
 	 private Product product;
 	
+	
 	public Long getId() {
 		return Id;
 	}

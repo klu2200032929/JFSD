@@ -48,6 +48,7 @@
             font-size: 16px;
             transition: background-color 0.3s, transform 0.3s;
             border-radius: 8px;
+            cursor: pointer;
         }
 
         .navbar-links a:hover {
@@ -172,7 +173,7 @@
     <div class="navbar">
         <div class="brand">Product Listing</div>
         <div class="navbar-links">
-            <a href="farmer-dashboard.jsp"><i class="fas fa-home"></i> Home</a>
+            <a onclick="history.back()"><i class="fas fa-arrow-left"></i> Back</a>
             <a href="AboutUs.jsp"><i class="fas fa-info-circle"></i> About</a>
             <a href="ContactUs.jsp"><i class="fas fa-envelope"></i> Contact</a>
         </div>
@@ -213,7 +214,7 @@
 
     <script>
         // JavaScript to update file name on file selection
-        document.getElementById('productImage').addEventListener('change', function (e) {
+        document.querySelector('input[type="file"]').addEventListener('change', function (e) {
             const fileName = e.target.files.length ? e.target.files[0].name : 'No file chosen';
             document.getElementById('fileName').textContent = fileName;
         });

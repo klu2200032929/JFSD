@@ -142,13 +142,13 @@
         <!-- Service Icons Grid -->
         <div class="services">
             <div class="service">
-                <a href="#">
+                <a href="addProduct.jsp">
                     <i class="fas fa-user-plus"></i>
                     <p>Add Product</p>
                 </a>
             </div>
             <div class="service">
-                <a href="#">
+                <a href="viewProducts">
                     <i class="fas fa-users"></i>
                     <p>View All Products</p>
                 </a>
@@ -160,7 +160,7 @@
                 </a>
             </div>
             <div class="service">
-                <a href="#">
+                <a href="deleteProduct">
                     <i class="fas fa-user-minus"></i>
                     <p>Delete Product</p>
                 </a>

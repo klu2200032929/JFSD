@@ -98,11 +98,11 @@
                 <h2>Account Settings</h2>
                 <div class="form-group">
                     <label for="adminEmail">Admin Email</label>
-                    <input type="email" id="adminEmail" name="adminEmail" placeholder="Enter admin email">
+                    <input type="email" id="adminEmail" name="adminEmail" value= "nacmadhav@gmail.com">
                 </div>
                 <div class="form-group">
                     <label for="adminPassword">Change Password</label>
-                    <input type="password" id="adminPassword" name="adminPassword" placeholder="Enter new password">
+                    <input type="password" id="adminPassword" name="adminPassword" value="root" >
                 </div>
             </div>
 
@@ -131,7 +131,7 @@
                 <h2>Site Settings</h2>
                 <div class="form-group">
                     <label for="siteName">Site Name</label>
-                    <input type="text" id="siteName" name="siteName" placeholder="Enter site name">
+                    <input type="text" id="siteName" name="siteName" value="Agriapp">
                 </div>
                 <div class="form-group">
                     <label for="siteLogo">Site Logo URL</label>
@@ -139,7 +139,7 @@
                 </div>
                 <div class="form-group">
                     <label for="contactInfo">Contact Information</label>
-                    <textarea id="contactInfo" name="contactInfo" placeholder="Enter contact information"></textarea>
+                    <input id="contactInfo" name="contactInfo" value="nacmadhav@gmail.com" ></input>
                 </div>
                 <div class="form-group">
                     <label for="theme">Select Theme</label>

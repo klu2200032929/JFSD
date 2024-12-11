@@ -7,7 +7,7 @@
     <title>Order Product</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General Styling */
+        /* Existing styles */
         body {
             font-family: 'Roboto', Arial, sans-serif;
             background: linear-gradient(to bottom, #f5f9f6, #e1f5eb);
@@ -15,6 +15,9 @@
             padding: 0;
             color: #333;
         }
+        /* Other styles remain unchanged */
+        
+        
 
         /* Navbar Styling */
         .navbar {
@@ -185,6 +188,14 @@
             </div>
             <div class="button-container">
                 <form method="post" action="/confirm/${product.id}">
+                    <label>
+                        <input type="radio" name="paymentMethod" value="cod" required>
+                        Cash on Delivery
+                    </label>
+                    <label>
+                        <input type="radio" name="paymentMethod" value="upi" required>
+                        UPI Payment
+                    </label>
                     <button type="submit">Confirm Purchase</button>
                 </form>
             </div>

@@ -294,6 +294,14 @@
                     <p>Order Tracking</p>
                 </a>
             </div>
+
+            <!-- New service for Videos -->
+            <div class="service">
+                <a href="videosOnValueAddedProducts.jsp">
+                    <i class="fas fa-video"></i>
+                    <p>Videos on Value Added Products</p>
+                </a>
+            </div>
         </div>
 
     </div>

@@ -172,8 +172,8 @@
         </div>
         <div class="navbar-links">
             <a href="#"><i class="fas fa-home"></i> Home</a>
-            <a href="AboutUs.jsp"><i class="fas fa-info-circle"></i> About Us</a>
-            <a href="ContactUs.jsp"><i class="fas fa-envelope"></i> Contact Us</a>
+            <a href="AboutUs2.jsp"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="ContactUs2.jsp"><i class="fas fa-envelope"></i> Contact Us</a>
             <div class="dropdown">
 			    <a href="javascript:void(0)"><i class="fas fa-user-circle"></i> Profile</a>
 			    <div class="dropdown-content">

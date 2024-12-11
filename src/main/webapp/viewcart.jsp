@@ -114,7 +114,7 @@
     </style>
 </head>
 <body>
-    <h3>Delete Product</h3>
+    <h3>Manage Cart</h3>
 
     <table>
         <tr>
@@ -126,6 +126,7 @@
             <th>Farmer Contact</th>
             <th>Image</th>
             <th>Action</th>
+            <th> Buy </th>
         </tr>
         <c:forEach items="${carts}" var="cart">
             <tr>
@@ -140,6 +141,9 @@
                 </td>
                 <td>
                     <a href="<c:url value='delete5?id=${cart.id}'/>">Delete</a>
+                </td>
+                <td>
+                    <a href="/order/${cart.product.id}">Buy</a>
                 </td>
             </tr>
         </c:forEach>

@@ -195,7 +195,7 @@
     <div class="navbar">
         <div class="brand">Product Listing</div>
         <div class="navbar-links">
-            <a href="farmer-dashboard.jsp"><i class="fas fa-home"></i> Home</a>
+            <a href="javascript:history.back();"><i class="fas fa-arrow-left"></i> Back</a>
             <a href="AboutUs.jsp"><i class="fas fa-info-circle"></i> About</a>
             <a href="ContactUs.jsp"><i class="fas fa-envelope"></i> Contact</a>
         </div>
@@ -214,7 +214,7 @@
                     <p class="price"><strong>Price:</strong> Rs. <c:out value="${product.cost}"></c:out></p>
                     <p>Farmer ContactNo: <c:out value="${product.farmer.contactno }"></c:out></p>
                     <div class="button-container">
-                        <a href="#" class="view-button">ADD to Cart</a>
+                    	<a href ="#" class="view-button">ADD To Cart</a>
                         <a href="#" class="view-button">Buy</a>
                     </div>
                 </div>

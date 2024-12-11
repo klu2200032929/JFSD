@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -50,7 +50,7 @@
             padding: 20px;
         }
 
-        .contact-form {
+        .about-us {
             background-color: white;
             padding: 30px;
             border-radius: 10px;
@@ -58,32 +58,14 @@
             margin-bottom: 30px;
         }
 
-        .contact-form h2 {
+        .about-us h2 {
             font-size: 30px;
             margin-bottom: 20px;
         }
 
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-size: 16px;
-        }
-
-        .contact-form button {
-            background-color: #388e3c;
-            color: white;
-            padding: 10px 20px;
-            border: none;
+        .about-us p {
             font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .contact-form button:hover {
-            background-color: #1abc9c;
+            line-height: 1.6;
         }
 
         footer {
@@ -100,27 +82,23 @@
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <div class="brand">AgriValue Connect</div>
+        <h2>AgriValue Connect</h2>
         <div class="navbar-links">
-            <a href="buyer-dashboard.jsp"><i class="fas fa-home"></i> Home</a>
-            <a href="AboutUs1.jsp"><i class="fas fa-info-circle"></i> About Us</a>
-            <a href="#"><i class="fas fa-envelope"></i> Contact Us</a>
+            <a href="admin-dashboard.jsp"><i class="fas fa-home"></i> Home</a>
+            <a href="AboutUs.jsp"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="ContactUs.jsp"><i class="fas fa-envelope"></i> Contact Us</a>
+            
         </div>
     </div>
 
     <!-- Main Content -->
     <div class="container">
-        <!-- Contact Us Form -->
-        <div class="contact-form">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or feedback, feel free to reach out to us!</p>
-            <form action="inserthelp" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required><br>
-                <input type="email" name="email" placeholder="Your Email" required><br>
-                <input type="text" name="subject" placeholder="Subject" required><br>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea><br>
-                <button type="submit">Send Message</button>
-            </form>
+        <!-- About Us Section -->
+        <div class="about-us">
+            <h2>About AgriValue Connect</h2>
+            <p>AgriValue Connect is a platform dedicated to empowering farmers by helping them turn their crops into more valuable products, such as processed foods, handmade goods, and other agricultural by-products. Our mission is to promote rural entrepreneurship and create opportunities for farmers to expand their businesses globally.</p>
+            <p>We connect farmers with global buyers, offering them a marketplace where they can list their products, manage inventory, and engage with customers. Through our platform, farmers gain access to technology, tools, and a supportive community to grow their businesses.</p>
+            <p>Our goal is to foster sustainability, improve agricultural practices, and provide farmers with the resources they need to thrive in today's competitive marketplace.</p>
         </div>
     </div>
 
