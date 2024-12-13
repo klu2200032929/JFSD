@@ -7,21 +7,18 @@
     <title>Order Product</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Existing styles */
+        /* General Styling */
         body {
-            font-family: 'Roboto', Arial, sans-serif;
-            background: linear-gradient(to bottom, #f5f9f6, #e1f5eb);
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(to bottom, #a8edea, #fed6e3);
             margin: 0;
             padding: 0;
             color: #333;
         }
-        /* Other styles remain unchanged */
-        
-        
 
         /* Navbar Styling */
         .navbar {
-            background-color: #2c6e49;
+            background-color: #ff6f61;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -34,7 +31,7 @@
         }
 
         .navbar .brand {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: bold;
             color: #fff;
             text-transform: uppercase;
@@ -48,14 +45,17 @@
         .navbar-links a {
             color: white;
             text-decoration: none;
-            padding: 10px 15px;
+            padding: 10px 20px;
             font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            border-radius: 5px;
+            font-weight: bold;
+            border-radius: 30px;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
         }
 
         .navbar-links a:hover {
-            background-color: #1d5a39;
+            background-color: #fff;
+            color: #ff6f61;
             transform: scale(1.1);
         }
 
@@ -63,27 +63,39 @@
         .container {
             max-width: 1200px;
             margin: 100px auto 40px;
-            padding: 20px;
+            padding: 30px;
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h2 {
-            color: #2c6e49;
+            color: #ff6f61;
             font-size: 36px;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-weight: bold;
         }
 
         .order-card {
-            background-color: #fafafa;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            background-color: #fdfdfd;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             display: flex;
-            justify-content: space-between;
+            gap: 20px;
             align-items: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -94,67 +106,97 @@
         }
 
         .order-card img {
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .order-info {
             flex-grow: 1;
-            padding-left: 20px;
         }
 
         .order-info h3 {
-            color: #388e3c;
-            font-size: 24px;
+            color: #2c6e49;
+            font-size: 26px;
             margin-bottom: 10px;
         }
 
         .order-info p {
             color: #555;
             font-size: 16px;
-            margin: 5px 0;
+            margin: 8px 0;
         }
 
         .price {
-            color: #2c6e49;
-            font-size: 20px;
+            color: #ff6f61;
+            font-size: 22px;
             font-weight: bold;
         }
 
         .button-container {
             display: flex;
+            flex-direction: column;
             gap: 15px;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .button-container button,
         .button-container a {
-            background-color: #2c6e49;
+            background: linear-gradient(45deg, #ff6f61, #ffa07a);
             color: #fff;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 12px 20px;
+            border-radius: 30px;
             text-decoration: none;
             font-size: 14px;
+            font-weight: bold;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .button-container button:hover,
         .button-container a:hover {
-            background-color: #1d5a39;
-            transform: scale(1.05);
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #ffa07a, #ff6f61);
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantity-selector input {
+            width: 60px;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .quantity-selector label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        label input[type="radio"] {
+            margin-right: 10px;
         }
 
         /* Footer */
         footer {
-            background-color: #2c6e49;
+            background-color: #ff6f61;
             color: white;
             text-align: center;
-            padding: 15px 20px;
-            margin-top: 40px;
+            padding: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
         }
 
         footer p {
@@ -188,6 +230,10 @@
             </div>
             <div class="button-container">
                 <form method="post" action="/confirm/${product.id}">
+                    <div class="quantity-selector">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                    </div>
                     <label>
                         <input type="radio" name="paymentMethod" value="cod" required>
                         Cash on Delivery

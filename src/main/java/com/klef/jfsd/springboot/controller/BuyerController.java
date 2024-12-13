@@ -218,28 +218,36 @@ public class BuyerController {
         return mv;
     }
 
-    @PostMapping("/confirm/{productId}")
-    public ResponseEntity<byte[]> confirmPurchase(@PathVariable Long productId, HttpServletRequest request) {
-        HttpSession session = request.getSession();
-        Buyer loggedBuyer = (Buyer) session.getAttribute("buyer");
+	@PostMapping("/confirm/{productId}")
+	public ResponseEntity<byte[]> confirmPurchase(
+	        @PathVariable Long productId, 
+	        @RequestParam int quantity, 
+	        HttpServletRequest request) {
+	    HttpSession session = request.getSession();
+	    Buyer loggedBuyer = (Buyer) session.getAttribute("buyer");
 
-        if (loggedBuyer == null) {
-            return ResponseEntity.status(401).body(null); // Unauthorized
-        }
+	    if (loggedBuyer == null) {
+	        return ResponseEntity.status(401).body(null); // Unauthorized
+	    }
 
-        Product product = buyerService.getProductById(productId);
+	    Product product = buyerService.getProductById(productId);
 
-        // Generate UPI QR code for payment
-        String upi = "upi://pay?pa=nacmadhav11042005@oksbi&pn=Anilchandramadhav Nutulapati&am=" + product.getCost() + "&cu=INR&tn=Payment for " + product.getName();
-        try {
-            byte[] qrCode = qrCodeService.generateQRCode(upi);
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.IMAGE_PNG);
-            return ResponseEntity.ok().headers(headers).body(qrCode);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.badRequest().build();
-        }
-    }
+	    // Calculate the total amount based on quantity
+	    double totalAmount = product.getCost() * quantity;
+
+	    // Generate UPI QR code for payment
+	    String upi = "upi://pay?pa=nacmadhav11042005@oksbi&pn=Anilchandramadhav Nutulapati&am=" 
+	                  + totalAmount + "&cu=INR&tn=Payment for " + product.getName();
+	    try {
+	        byte[] qrCode = qrCodeService.generateQRCode(upi);
+	        HttpHeaders headers = new HttpHeaders();
+	        headers.setContentType(MediaType.IMAGE_PNG);
+	        return ResponseEntity.ok().headers(headers).body(qrCode);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return ResponseEntity.badRequest().build();
+	    }
+	}
+
 	
 }
