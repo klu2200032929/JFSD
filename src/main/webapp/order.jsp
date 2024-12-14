@@ -135,6 +135,13 @@
             font-weight: bold;
         }
 
+        .total-price {
+            color: #2c6e49;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
         .button-container {
             display: flex;
             flex-direction: column;
@@ -225,7 +232,8 @@
                 <h3>${product.name}</h3>
                 <p><strong>Product ID:</strong> ${product.id}</p>
                 <p><strong>Description:</strong> ${product.description}</p>
-                <p class="price">Price: Rs. ${product.cost}</p>
+                <p class="price">Price per unit: Rs. <span id="unitPrice">${product.cost}</span></p>
+                <p class="total-price">Total Cost: Rs. <span id="totalPrice">${product.cost}</span></p>
                 <p><strong>Farmer Contact:</strong> ${product.farmer.contactno}</p>
             </div>
             <div class="button-container">
@@ -252,6 +260,15 @@
     <footer>
         <p>&copy; 2024 Product Order. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById('quantity').addEventListener('input', function () {
+            const unitPrice = parseFloat(document.getElementById('unitPrice').innerText);
+            const quantity = parseInt(this.value) || 1;
+            const totalPrice = unitPrice * quantity;
+            document.getElementById('totalPrice').innerText = totalPrice.toFixed(2);
+        });
+    </script>
 </body>
 
 </html>
