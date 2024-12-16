@@ -18,7 +18,7 @@ public interface BuyerService {
 	public List<Cart> viewProductsByBuyerId(Long id);
 	public Product displayProductById(Long pid);
 	public List<Product> getProductsByBuyerLocation(String buyerLocation);
-	public String addProductToCart(Long id, Long productId);
+	public String addProductToCart(Long buyer_id, Long id);
 	public String deleteCart(Long id);
 	
 	

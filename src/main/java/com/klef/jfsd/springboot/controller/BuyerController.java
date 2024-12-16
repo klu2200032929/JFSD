@@ -82,7 +82,7 @@ public class BuyerController {
         
         ModelAndView mv =new ModelAndView();
         
-        mv.setViewName("buyer-login");
+        mv.setViewName("index");
         mv.addObject("message", message);
         return mv;
     }
@@ -157,10 +157,11 @@ public class BuyerController {
 
 	    // Add product to cart
 	    String message = buyerService.addProductToCart(loggedBuyer.getId(), productId);
-
-	    session.setAttribute("message", message);
-	    return "redirect:/productBrowsing";
+	    
+	    session.setAttribute("message", message); // Set the message to be displayed in popup
+	    return "redirect:/productBrowsing"; // Redirect back to the page where the product was added
 	}
+
 
 	@GetMapping("viewcart")
 	public ModelAndView viewcart(HttpServletRequest request) {

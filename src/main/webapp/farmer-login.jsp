@@ -132,7 +132,7 @@
 </head>
 <body>
     <div class="login-container">
-        <img src="farmer-icon.png" alt="Login Icon" class="visual-header">
+        <img src="farmer-login.png" alt="Login Icon" class="visual-header">
         <h1>Welcome Back!</h1>
         <p class="tagline">Log in to access your farmer account and manage your products.</p>
         <form id="loginForm" action="checkfarmerlogin" method="post">
@@ -146,7 +146,7 @@
         </form>
 
         <div class="footer">
-            Don't have an account? <a href="register.jsp">Sign up here</a>
+            Don't have an account? <a href="farmer-register.jsp">Sign up here</a>
         </div>
     </div>
 </body>

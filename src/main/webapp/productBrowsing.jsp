@@ -148,7 +148,22 @@
             transform: scale(1.05);
         }
 
-        /* Footer */
+        /* Success Popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #4caf50;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+            z-index: 2000;
+        }
+
         footer {
             background-color: #2c6e49;
             color: white;
@@ -190,6 +205,11 @@
         </div>
     </div>
 
+    <!-- Success Message Popup -->
+    <div id="successPopup" class="popup">
+        Item added to cart successfully!
+    </div>
+
     <!-- Main Container -->
     <div class="container">
         <h2>Our Products</h2>
@@ -203,7 +223,7 @@
                     <p class="price"><strong>Price:</strong> Rs. <c:out value="${product.cost}"></c:out></p>
                     <p><strong>Farmer Contact:</strong> <c:out value="${product.farmer.contactno}"></c:out></p>
                     <div class="button-container">
-                        <form action="addtocart" method="post">
+                        <form action="addtocart" method="post" onsubmit="showSuccessMessage(event)">
                             <input type="hidden" name="productId" value="${product.id}">
                             <button type="submit">Add to Cart</button>
                         </form>
@@ -218,6 +238,24 @@
     <footer>
         <p>&copy; 2024 Product Listing. All Rights Reserved.</p>
     </footer>
+
+    <!-- JavaScript for Popup -->
+    <script>
+        function showSuccessMessage(event) {
+            event.preventDefault(); // Prevent form submission
+            var form = event.target;
+            // Simulate form submission (you can replace this with actual AJAX form submission)
+            setTimeout(function() {
+                // Show success message
+                document.getElementById('successPopup').style.display = 'block';
+                // Hide the success message after 3 seconds
+                setTimeout(function() {
+                    document.getElementById('successPopup').style.display = 'none';
+                    form.submit(); // Submit the form after showing the popup
+                }, 3000);
+            }, 500);
+        }
+    </script>
 </body>
 
 </html>

@@ -154,19 +154,11 @@
             <label for="contactno">Contact Number</label>
             <input type="number" id="contactno" name="contactno" placeholder="Enter your contact number" required>
 
-            <label for="address">Delivery Address</label>
-            <input type="text" id="address" name="address" placeholder="Enter your delivery address" required>
-
-            <label for="paymentMethod">Preferred Payment Method</label>
-            <input type="text" id="paymentMethod" name="paymentMethod" placeholder="Enter preferred payment method" required>
-
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Create a password" required>
-            <div class="strength-message" id="strengthMessage"></div>
 
             <label for="confirmPassword">Confirm Password</label>
             <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
-            <div class="error-message" id="errorMessage"></div>
 
             <button type="submit" id="submitButton">Register</button>
         </form>

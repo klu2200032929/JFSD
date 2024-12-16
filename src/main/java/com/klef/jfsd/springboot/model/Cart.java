@@ -25,7 +25,9 @@ public class Cart {
 	 @JoinColumn(name = "id", nullable = false)  // Join column to link with farmer table
 	 private Product product;
 	
-	
+	@Column(name = "farmer_id", nullable = true)
+	private Integer farmerId;
+
 	public Long getId() {
 		return Id;
 	}
@@ -43,6 +45,12 @@ public class Cart {
 	}
 	public void setProduct(Product product) {
 		this.product = product;
+	}
+	public Integer getFarmerId() {
+		return farmerId;
+	}
+	public void setFarmerId(Integer farmerId) {
+		this.farmerId = farmerId;
 	}
 	
 	

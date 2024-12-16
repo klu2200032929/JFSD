@@ -55,15 +55,15 @@ public class BuyerServiceImpl implements BuyerService{
 
 	
 	@Override
-	public String addProductToCart(Long buyerId, Long productId) {
+	public String addProductToCart(Long buyer_id, Long id) {
 	    // Fetch the buyer
-	    Buyer buyer = buyerRepository.findById(buyerId).orElse(null);
+	    Buyer buyer = buyerRepository.findById(buyer_id).orElse(null);
 	    if (buyer == null) {
 	        return "Buyer not found!";
 	    }
 
 	    // Fetch the product
-	    Product product = productRepository.findById(productId).orElse(null);
+	    Product product = productRepository.findById(id).orElse(null);
 	    if (product == null) {
 	        return "Product not found!";
 	    }
