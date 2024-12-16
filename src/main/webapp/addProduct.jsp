@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f5f3eb; /* Light beige for a natural feel */
             margin: 0;
             padding: 0;
         }
 
         /* Navbar Styling */
         .navbar {
-            background-color: #2c6e49;
+            background-color: #3b6e3b; /* Deep green for agriculture */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -52,7 +52,7 @@
         }
 
         .navbar-links a:hover {
-            background-color: #1d5a39;
+            background-color: #2d5c2d; /* Slightly darker green */
             transform: scale(1.1);
         }
 
@@ -60,14 +60,14 @@
         .container {
             max-width: 800px;
             margin: 80px auto 40px; /* Added margin-top for space below navbar */
-            background-color: #fff;
+            background-color: #ffffff; /* White for contrast */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
-            color: #388e3c;
+            color: #3b6e3b;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -99,7 +99,7 @@
         }
 
         button {
-            background-color: #388e3c;
+            background-color: #6d4c41; /* Earthy brown */
             color: white;
             padding: 12px 20px;
             border: none;
@@ -111,12 +111,12 @@
         }
 
         button:hover {
-            background-color: #1abc9c;
+            background-color: #5a4037; /* Darker brown */
         }
 
         .file-input {
             margin-top: 10px;
-            background-color: #f1f1f1;
+            background-color: #f7f5f0;
             padding: 5px;
             border-radius: 5px;
             display: flex;
@@ -152,7 +152,7 @@
 
         /* Footer Styling */
         footer {
-            background-color: #2c6e49;
+            background-color: #3b6e3b;
             color: white;
             text-align: center;
             padding: 10px 20px;
@@ -171,11 +171,11 @@
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <div class="brand">Product Listing</div>
+        <div class="brand">Support Farmers</div>
         <div class="navbar-links">
             <a onclick="history.back()"><i class="fas fa-arrow-left"></i> Back</a>
-            <a href="AboutUs.jsp"><i class="fas fa-info-circle"></i> About</a>
-            <a href="ContactUs.jsp"><i class="fas fa-envelope"></i> Contact</a>
+            <a href="AboutUs.jsp"><i class="fas fa-seedling"></i> About</a>
+            <a href="ContactUs.jsp"><i class="fas fa-phone"></i> Contact</a>
         </div>
     </div>
 
@@ -209,7 +209,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Product Listing. All Rights Reserved.</p>
+        <p>&copy; 2024 Support Farmers Initiative. All Rights Reserved.</p>
     </footer>
 
     <script>

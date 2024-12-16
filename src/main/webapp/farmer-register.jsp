@@ -1,6 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmer Registration</title>
     <style>
-        /* Styling for responsiveness and visual appeal */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,31 +16,33 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #00c4cc, #009aa3);
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(to bottom, #f9f5ec, #d9e4dd);
             color: #333;
         }
 
         .register-container {
             width: 90%;
-            max-width: 400px;
-            padding: 30px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             text-align: center;
-            animation: fadeIn 0.8s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .register-container img {
+            width: 100%;
+            max-width: 120px;
+            margin-bottom: 20px;
+            border-radius: 50%; /* Added border-radius to make the image circular */
+            border: 3px solid #4a7c59; /* Optional: Add a border for better contrast */
         }
 
         .register-container h1 {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: bold;
-            color: #009aa3;
+            color: #4a7c59;
             margin-bottom: 10px;
         }
 
@@ -61,89 +59,88 @@
         }
 
         label {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #555;
             width: 100%;
-            max-width: 400px;
             text-align: left;
             margin-bottom: 5px;
+            font-weight: bold;
         }
 
-        input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+        input {
             width: 100%;
             padding: 12px;
             font-size: 1rem;
             margin-bottom: 15px;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             transition: border 0.3s ease;
         }
 
         input:focus {
-            border-color: #009aa3;
+            border-color: #4a7c59;
             outline: none;
         }
 
         button {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             font-size: 1rem;
             font-weight: bold;
-            color: #ffffff;
-            background-color: #00c4cc;
+            color: #fff;
+            background-color: #4a7c59;
             border: none;
             border-radius: 30px;
             cursor: pointer;
             transition: background-color 0.3s;
-            margin-top: 10px;
         }
 
-        button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-
-        button:hover:enabled {
-            background-color: #007f89;
+        button:hover {
+            background-color: #3d674a;
         }
 
         .footer {
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 0.9rem;
             color: #777;
         }
 
         .footer a {
-            color: #009aa3;
+            color: #4a7c59;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
         }
 
         .footer a:hover {
-            color: #005f65;
+            color: #3d674a;
         }
 
         .error-message {
             color: red;
             font-size: 0.9rem;
-            margin-top: -15px;
             margin-bottom: 15px;
             display: none;
         }
 
         .strength-message {
             font-size: 0.9rem;
-            color: #777;
-            margin-top: -10px;
+            color: #4a7c59;
             margin-bottom: 10px;
+        }
+
+        .register-container .tagline {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 25px;
         }
     </style>
 </head>
 <body>
     <div class="register-container">
-        <h1>Farmer Registration</h1>
-        <p>Join us to connect with buyers and sell your products easily.</p>
+        <img src="farmer-icon.png" alt="Farmer Icon" class="visual-header">
+        <h1>Join Our Farmer Community</h1>
+        <p class="tagline">Empowering farmers to create value-added products and reach global markets.</p>
         <form id="registrationForm" action="insertfarmer" method="post">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
@@ -155,30 +152,23 @@
             <input type="text" id="location" name="location" placeholder="Enter your location" required>
 
             <label for="contactno">Contact Number</label>
-            <input type="number" id="contactno" name="contactno" placeholder="Enter your contact number" required oninput="validateContactLength()">
-            
-            
-			<label for="upiid">UPIID</label>
-            <input type="text" id="upiid" name="upiid" placeholder="Enter your upi id" required>
-            
-            <label for="upiuname">UPI Uname</label>
-            <input type="text" id="upiuname" name="upiuname" placeholder="Enter your upi username" required>
-            
+            <input type="number" id="contactno" name="contactno" placeholder="Enter your contact number" required>
+
+            <label for="upiid">UPI ID</label>
+            <input type="text" id="upiid" name="upiid" placeholder="Enter your UPI ID" required>
+
+            <label for="upiuname">UPI Username</label>
+            <input type="text" id="upiuname" name="upiuname" placeholder="Enter your UPI username" required>
+
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Create a password" required>
-	
-	
-			<div class="strength-message" id="strengthMessage"></div>
-			
+            <div class="strength-message" id="strengthMessage"></div>
+
             <label for="confirmPassword">Confirm Password</label>
             <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
-
-            <div class="strength-message" id="strengthMessage"></div>
             <div class="error-message" id="errorMessage"></div>
 
-
-			
-            <button type="submit" id="submitButton" disabled>Register</button>
+            <button type="submit" id="submitButton">Register</button>
         </form>
 
         <div class="footer">
@@ -193,7 +183,6 @@
         const strengthMessage = document.getElementById('strengthMessage');
         const passwordField = document.getElementById('password');
         const confirmPasswordField = document.getElementById('confirmPassword');
-        const contactField = document.getElementById('contactno');
 
         function checkPasswordStrength(password) {
             let strength = 0;
@@ -201,8 +190,8 @@
             if (/[A-Z]/.test(password)) strength++;
             if (/[a-z]/.test(password)) strength++;
             if (/[0-9]/.test(password)) strength++;
-            if (/[\W_]/.test(password)) strength++;
-            
+            if (/[@$!%*?&#]/.test(password)) strength++;
+
             if (strength === 5) return "Strong";
             if (strength >= 3) return "Moderate";
             return "Weak";
@@ -211,37 +200,15 @@
         function validateForm() {
             errorMessage.style.display = 'none';
 
-            // Check if all fields are filled
-            if (!registrationForm.username.value || !registrationForm.password.value || 
-                !registrationForm.confirmPassword.value || !registrationForm.email.value || 
-                !registrationForm.location.value || !registrationForm.contactno.value|| !registrationForm.upiuname.value|| !registrationForm.upiid.value) {
-                errorMessage.textContent = 'Please fill out all fields.';
-                errorMessage.style.display = 'block';
-                submitButton.disabled = true;
-                return;
-            }
-
-            // Check contact number length
-            if (contactField.value.length !== 10) {
-                errorMessage.textContent = 'Contact number must be exactly 10 digits.';
-                errorMessage.style.display = 'block';
-                submitButton.disabled = true;
-                return;
-            }
-
-            // Check password strength
             const passwordStrength = checkPasswordStrength(passwordField.value);
             if (passwordStrength === "Weak") {
-                strengthMessage.textContent = "Password is weak. Use a mix of uppercase, lowercase, numbers, and special characters.";
+                strengthMessage.textContent = "Password is weak. Add uppercase, lowercase, numbers, and special characters.";
                 submitButton.disabled = true;
                 return;
-            } else if (passwordStrength === "Moderate") {
-                strengthMessage.textContent = "Password is moderate. Consider adding more character types.";
             } else {
-                strengthMessage.textContent = "Password is strong.";
+                strengthMessage.textContent = `Password strength: ${passwordStrength}`;
             }
 
-            // Check if passwords match
             if (passwordField.value !== confirmPasswordField.value) {
                 errorMessage.textContent = 'Passwords do not match.';
                 errorMessage.style.display = 'block';
@@ -249,20 +216,9 @@
                 return;
             }
 
-            // Enable submit button if all validations pass and password is strong
-            errorMessage.style.display = 'none';
             submitButton.disabled = false;
         }
 
-        // Real-time validation of contact number length
-        function validateContactLength() {
-            if (contactField.value.length > 10) {
-                contactField.value = contactField.value.slice(0, 10);
-            }
-            validateForm();
-        }
-
-        // Add event listeners for validation on input changes
         registrationForm.addEventListener('input', validateForm);
     </script>
 </body>

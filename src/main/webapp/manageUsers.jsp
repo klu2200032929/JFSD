@@ -11,12 +11,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #fdf3e7; /* Light earthy tone */
         }
 
         /* Navbar styling */
         .navbar {
-            background-color: #009aa3;
+            background-color: #5a8f58; /* Deep green for agricultural theme */
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
@@ -47,7 +47,7 @@
         }
 
         .navbar-links a:hover {
-            background-color: #006f7c;
+            background-color: #3f6b3f; /* Darker green on hover */
             transform: scale(1.1);
             border-radius: 5px;
         }
@@ -60,7 +60,7 @@
 
         h2 {
             text-align: center;
-            color: #009aa3;
+            color: #5a8f58;
         }
 
         /* Service icons section */
@@ -73,7 +73,7 @@
         }
 
         .service {
-            background-color: #fff;
+            background-color: #ffffff;
             border-radius: 10px;
             padding: 30px;
             text-align: center;
@@ -87,7 +87,7 @@
         }
 
         .service a {
-            color: #009aa3;
+            color: #5a8f58;
             text-decoration: none;
             display: block;
         }
@@ -105,7 +105,7 @@
 
         /* Footer styling */
         footer {
-            background-color: #009aa3;
+            background-color: #5a8f58;
             color: white;
             text-align: center;
             padding: 20px;
@@ -129,8 +129,8 @@
             Admin Dashboard
         </div>
         <div class="navbar-links">
-            <a href="admin-dashboard.jsp"><i class="fas fa-home"></i> Home</a>
-            <a href="#"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="admin-dashboard.jsp"><i class="fas fa-tractor"></i> Home</a>
+            <a href="#"><i class="fas fa-seedling"></i> About Us</a>
             <a href="#"><i class="fas fa-envelope"></i> Contact</a>
         </div>
     </div>
@@ -155,13 +155,13 @@
             </div>
             <div class="service">
                 <a href="Update.jsp">
-                    <i class="fas fa-user-edit"></i>
+                    <i class="fas fa-edit"></i>
                     <p>Update User</p>
                 </a>
             </div>
             <div class="service">
                 <a href="deleteuser">
-                    <i class="fas fa-user-minus"></i>
+                    <i class="fas fa-trash"></i>
                     <p>Delete User</p>
                 </a>
             </div>
@@ -171,7 +171,7 @@
 
     <!-- Footer -->
     <footer>
-        &copy; 2024 Admin Dashboard
+        &copy; 2024 Support Farmers Dashboard
     </footer>
 
 </body>

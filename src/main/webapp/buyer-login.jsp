@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buyer Login</title>
     <style>
-        /* Same CSS as the farmer login page */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,26 +18,33 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #00c4cc, #009aa3);
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(to bottom, #f9f5ec, #d9e4dd);
             color: #333;
         }
 
         .login-container {
             width: 90%;
-            max-width: 400px;
-            padding: 30px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             text-align: center;
-            animation: fadeIn 0.8s ease;
+        }
+
+        .login-container img {
+            width: 100%;
+            max-width: 120px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 3px solid #4a7c59;
         }
 
         .login-container h1 {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: bold;
-            color: #009aa3;
+            color: #4a7c59;
             margin-bottom: 10px;
         }
 
@@ -56,73 +61,66 @@
         }
 
         label {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #555;
             width: 100%;
-            max-width: 400px;
             text-align: left;
             margin-bottom: 5px;
+            font-weight: bold;
         }
 
-        input[type="email"], input[type="password"] {
+        input {
             width: 100%;
             padding: 12px;
             font-size: 1rem;
             margin-bottom: 15px;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             transition: border 0.3s ease;
         }
 
         input:focus {
-            border-color: #009aa3;
+            border-color: #4a7c59;
             outline: none;
         }
 
         button {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             font-size: 1rem;
             font-weight: bold;
-            color: #ffffff;
-            background-color: #00c4cc;
+            color: #fff;
+            background-color: #4a7c59;
             border: none;
             border-radius: 30px;
             cursor: pointer;
             transition: background-color 0.3s;
-            margin-top: 10px;
         }
 
-        button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-
-        button:hover:enabled {
-            background-color: #007f89;
+        button:hover {
+            background-color: #3d674a;
         }
 
         .footer {
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 0.9rem;
             color: #777;
         }
 
         .footer a {
-            color: #009aa3;
+            color: #4a7c59;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
         }
 
         .footer a:hover {
-            color: #005f65;
+            color: #3d674a;
         }
 
         .error-message {
             color: red;
             font-size: 0.9rem;
-            margin-top: -15px;
             margin-bottom: 15px;
             display: none;
         }
@@ -130,6 +128,7 @@
 </head>
 <body>
     <div class="login-container">
+        <img src="buyer-icon.png" alt="Buyer Icon" class="visual-header">
         <h1>Buyer Login</h1>
         <p>Welcome, Buyer! Please enter your credentials to access your account.</p>
         <form id="buyerLoginForm" action="checkbuyerlogin" method="post">

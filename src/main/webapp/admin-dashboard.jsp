@@ -12,12 +12,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f5f5e6; /* Light earthy tone */
         }
 
         /* Navbar styling */
         .navbar {
-            background-color: #388e3c;
+            background-color: #4a752c; /* Rich green */
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
@@ -31,6 +31,7 @@
         .navbar .brand {
             font-size: 24px;
             color: white;
+            font-weight: bold;
         }
 
         .navbar-links {
@@ -48,7 +49,7 @@
         }
 
         .navbar-links a:hover {
-            background-color: #1abc9c;
+            background-color: #6cbf40; /* Brighter green */
             transform: scale(1.1);
             border-radius: 5px;
         }
@@ -61,7 +62,7 @@
 
         h2 {
             text-align: center;
-            color: #388e3c;
+            color: #4a752c;
         }
 
         /* Service icons section */
@@ -74,7 +75,7 @@
         }
 
         .service {
-            background-color: #fff;
+            background-color: #ffffff;
             border-radius: 10px;
             padding: 30px;
             text-align: center;
@@ -88,24 +89,25 @@
         }
 
         .service a {
-            color: #388e3c;
+            color: #4a752c;
             text-decoration: none;
             display: block;
         }
 
         .service a i {
-            font-size: 45px; /* Icon size */
+            font-size: 50px; /* Icon size */
+            color: #f9a825; /* Golden yellow for agriculture */
         }
 
         .service a p {
-            font-size: 14px;
-            color: #555;
-            margin-top:10px; 
+            font-size: 16px;
+            color: #333;
+            margin-top: 10px;
         }
 
         /* Footer styling */
         footer {
-            background-color: #388e3c;
+            background-color: #4a752c;
             color: white;
             text-align: center;
             padding: 20px;
@@ -124,43 +126,43 @@
                 grid-template-columns: 1fr;
             }
         }
-		
-		.dropdown {
-		    position: relative;
-		    display: inline-block;
-		}
-		
-		/* Dropdown Content (the pop-up menu) */
-		.dropdown-content {
-		    display: none;
-		    position: absolute;
-		    background-color: #388e3c;  /* Green color for the dropdown */
-		    min-width: 160px;
-		    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-		    z-index: 1;
-		    right: 0;
-		    border-radius: 8px;
-		}
-		
-		/* Links inside the dropdown */
-		.dropdown-content a {
-		    color: white;
-		    padding: 12px 16px;
-		    text-decoration: none;
-		    display: block;
-		    font-size: 16px;
-		}
-		
-		/* Change color when hovering over the links */
-		.dropdown-content a:hover {
-		    background-color: #4de352;  /* Lighter green when hovered */
-		    border-radius: 8px;
-		}
-		
-		/* Display the dropdown content when hovered */
-		.dropdown:hover .dropdown-content {
-		    display: block;
-		}
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (the pop-up menu) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #4a752c;  /* Green color for the dropdown */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 0;
+            border-radius: 8px;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+
+        /* Change color when hovering over the links */
+        .dropdown-content a:hover {
+            background-color: #6cbf40;  /* Brighter green when hovered */
+            border-radius: 8px;
+        }
+
+        /* Display the dropdown content when hovered */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -168,26 +170,26 @@
     <!-- Navbar -->
     <div class="navbar">
         <div class="brand">
-            Admin Dashboard
+            Farmer Connect
         </div>
         <div class="navbar-links">
-            <a href="#"><i class="fas fa-home"></i> Home</a>
-            <a href="AboutUs2.jsp"><i class="fas fa-info-circle"></i> About Us</a>
-            <a href="ContactUs2.jsp"><i class="fas fa-envelope"></i> Contact Us</a>
+            <a href="#"><i class="fas fa-seedling"></i> Home</a>
+            <a href="AboutUs2.jsp"><i class="fas fa-handshake"></i> About Us</a>
+            <a href="ContactUs2.jsp"><i class="fas fa-phone-alt"></i> Contact Us</a>
             <div class="dropdown">
-			    <a href="javascript:void(0)"><i class="fas fa-user-circle"></i> Profile</a>
-			    <div class="dropdown-content">
-			        <a href="AdminProfile">View Profile</a>
-			        <a href="editProfile">Edit Profile</a>
-			        <a href="adminlogout">Logout</a>
-			    </div>
-			</div>
+                <a href="javascript:void(0)"><i class="fas fa-user"></i> Profile</a>
+                <div class="dropdown-content">
+                    <a href="AdminProfile">View Profile</a>
+                    <a href="editProfile">Edit Profile</a>
+                    <a href="adminlogout">Logout</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Main content -->
     <div class="container">
-        <h2>Admin Dashboard</h2>
+        <h2>Welcome to Farmer Connect</h2>
         
         <!-- Service Icons Grid -->
         <div class="services">
@@ -199,31 +201,31 @@
             </div>
             <div class="service">
                 <a href="productModeration.jsp">
-                    <i class="fas fa-cogs"></i>
+                    <i class="fas fa-tractor"></i>
                     <p>Product Moderation</p>
                 </a>
             </div>
             <div class="service">
                 <a href="orderManagement.jsp">
-                    <i class="fas fa-box"></i>
+                    <i class="fas fa-shopping-cart"></i>
                     <p>Order Management</p>
                 </a>
             </div>
             <div class="service">
                 <a href="helpSupport">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-hands-helping"></i>
                     <p>Help & Support</p>
                 </a>
             </div>
             <div class="service">
                 <a href="shippingAndDelivery.jsp">
-                    <i class="fas fa-truck"></i>
+                    <i class="fas fa-shipping-fast"></i>
                     <p>Shipping & Delivery</p>
                 </a>
             </div>
             <div class="service">
                 <a href="settings.jsp">
-                    <i class="fas fa-users-cog"></i>
+                    <i class="fas fa-tools"></i>
                     <p>Settings</p>
                 </a>
             </div>
@@ -233,7 +235,7 @@
 
     <!-- Footer -->
     <footer>
-        Admin Dashboard Footer
+        Empowering Farmers for a Better Tomorrow
     </footer>
 
 </body>

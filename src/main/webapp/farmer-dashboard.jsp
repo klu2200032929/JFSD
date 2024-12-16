@@ -12,25 +12,25 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #eef7ed; /* Soft green background */
         }
 
         /* Navbar styling */
         .navbar {
-            background-color: #388e3c;
+            background-color: #2c3e50; /* Dark slate color */
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
             top: 0;
-            width: 97%;
+            width: 100%;
             z-index: 1000;
         }
 
         .navbar .brand {
             font-size: 24px;
-            color: white;
+            color: #f1c40f; /* Yellow for warmth */
             font-weight: bold;
         }
 
@@ -40,7 +40,7 @@
         }
 
         .navbar-links a {
-            color: white;
+            color: #ecf0f1; /* Light text color */
             text-decoration: none;
             padding: 10px 15px;
             font-size: 16px;
@@ -49,20 +49,20 @@
         }
 
         .navbar-links a:hover {
-            background-color: #4de352;
+            background-color: #1abc9c; /* Fresh green */
             transform: scale(1.1);
             border-radius: 8px;
         }
 
         /* Container for the dashboard content */
         .container {
-            margin-top: 90px; /* Adjust to avoid navbar overlap */
+            margin-top: 80px; /* Adjust to avoid navbar overlap */
             padding: 20px;
         }
 
         h2 {
             text-align: center;
-            color: #388e3c;
+            color: #34495e; /* Deep slate */
             margin-bottom: 20px;
         }
 
@@ -77,7 +77,7 @@
         }
 
         .service {
-            background-color: #fff;
+            background-color: #ffffff;
             border-radius: 10px;
             padding: 30px;
             text-align: center;
@@ -91,14 +91,15 @@
         }
 
         .service a {
-            color: #388e3c;
+            color: #2c3e50; /* Match navbar color */
             text-decoration: none;
             display: block;
         }
 
         .service a i {
-            font-size: 40px; /* Icon size */
+            font-size: 50px; /* Larger icon size */
             margin-bottom: 10px;
+            color: #27ae60; /* Vibrant green */
         }
 
         .service a p {
@@ -115,7 +116,7 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #388e3c;
+            background-color: #2c3e50;
             min-width: 160px;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
             z-index: 1;
@@ -124,7 +125,7 @@
         }
 
         .dropdown-content a {
-            color: white;
+            color: #ecf0f1; /* Light text color */
             padding: 12px 16px;
             text-decoration: none;
             display: block;
@@ -132,7 +133,7 @@
         }
 
         .dropdown-content a:hover {
-            background-color: #4de352;
+            background-color: #1abc9c;
             border-radius: 8px;
         }
 
@@ -142,8 +143,8 @@
 
         /* Footer styling */
         footer {
-            background-color: #388e3c;
-            color: white;
+            background-color: #2c3e50;
+            color: #ecf0f1;
             text-align: center;
             padding: 15px;
             margin-top: 40px;
@@ -202,7 +203,7 @@
             <a href="#"><i class="fas fa-home"></i> Home</a>
             <a href="AboutUs.jsp"><i class="fas fa-info-circle"></i> About Us</a>
             <a href="ContactUs.jsp"><i class="fas fa-envelope"></i> Contact Us</a>
-            
+
             <!-- Profile Dropdown -->
             <div class="dropdown">
                 <a href="javascript:void(0)"><i class="fas fa-user-circle"></i> Profile</a>
@@ -218,31 +219,31 @@
     <!-- Main content -->
     <div class="container">
         <h2>Farmer Dashboard</h2>
-        
+
         <!-- Service Icons Grid -->
         <div class="services">
             <!-- Individual service blocks -->
             <div class="service">
                 <a href="addProduct.jsp">
-                    <i class="fas fa-plus-square"></i>
+                    <i class="fas fa-seedling"></i>
                     <p>Add Product</p>
                 </a>
             </div>
             <div class="service">
                 <a href="viewProducts">
-                    <i class="fas fa-list-alt"></i>
+                    <i class="fas fa-list"></i>
                     <p>View Products</p>
                 </a>
             </div>
             <div class="service">
                 <a href="deleteProduct">
-                    <i class="fas fa-trash-alt"></i>
+                    <i class="fas fa-trash"></i>
                     <p>Delete Product</p>
                 </a>
             </div>
             <div class="service">
                 <a href="updateProduct.jsp">
-                    <i class="fas fa-edit"></i>
+                    <i class="fas fa-pencil-alt"></i>
                     <p>Update Product</p>
                 </a>
             </div>
@@ -260,13 +261,13 @@
             </div>
             <div class="service">
                 <a href="transactions.jsp">
-                    <i class="fas fa-chart-line"></i>
+                    <i class="fas fa-chart-bar"></i>
                     <p>Transaction & Earnings</p>
                 </a>
             </div>
             <div class="service">
                 <a href="buyerSupport.jsp">
-                    <i class="fas fa-headset"></i>
+                    <i class="fas fa-hands-helping"></i>
                     <p>Buyer Interaction & Support</p>
                 </a>
             </div>
@@ -290,12 +291,10 @@
             </div>
             <div class="service">
                 <a href="orderTracking.jsp">
-                    <i class="fas fa-truck"></i>
+                    <i class="fas fa-location">               </i>
                     <p>Order Tracking</p>
                 </a>
             </div>
-
-            <!-- New service for Videos -->
             <div class="service">
                 <a href="videosOnValueAddedProducts.jsp">
                     <i class="fas fa-video"></i>
@@ -303,13 +302,12 @@
                 </a>
             </div>
         </div>
-
     </div>
 
     <!-- Footer -->
     <footer>
-        &copy; 2024 Farmer Dashboard. All Rights Reserved.
+        <p>&copy; 2024 Farmer Dashboard. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
+                    

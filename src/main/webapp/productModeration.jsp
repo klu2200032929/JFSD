@@ -8,15 +8,15 @@
     <style>
         /* General body styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #eef5e9;
         }
 
         /* Navbar styling */
         .navbar {
-            background-color: #009aa3;
+            background-color: #2b580c;
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
@@ -25,11 +25,13 @@
             top: 0;
             width: 100%;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .navbar .brand {
             font-size: 24px;
-            color: white;
+            color: #ffffff;
+            font-weight: bold;
         }
 
         .navbar-links {
@@ -38,7 +40,7 @@
         }
 
         .navbar-links a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             padding: 10px 20px;
             font-size: 18px;
@@ -47,7 +49,7 @@
         }
 
         .navbar-links a:hover {
-            background-color: #006f7c;
+            background-color: #3b7520;
             transform: scale(1.1);
             border-radius: 5px;
         }
@@ -60,7 +62,8 @@
 
         h2 {
             text-align: center;
-            color: #009aa3;
+            color: #2b580c;
+            font-size: 28px;
         }
 
         /* Service icons section */
@@ -73,7 +76,7 @@
         }
 
         .service {
-            background-color: #fff;
+            background-color: #ffffff;
             border-radius: 10px;
             padding: 30px;
             text-align: center;
@@ -87,7 +90,7 @@
         }
 
         .service a {
-            color: #009aa3;
+            color: #2b580c;
             text-decoration: none;
             display: block;
         }
@@ -95,6 +98,7 @@
         .service a i {
             font-size: 50px; /* Icon size */
             margin-bottom: 10px;
+            color: #66bb6a; /* Green-themed color for icons */
         }
 
         .service a p {
@@ -105,7 +109,7 @@
 
         /* Footer styling */
         footer {
-            background-color: #009aa3;
+            background-color: #2b580c;
             color: white;
             text-align: center;
             padding: 20px;
@@ -126,11 +130,11 @@
     <!-- Navbar -->
     <div class="navbar">
         <div class="brand">
-            Product Moderation
+            Farmer Support Admin
         </div>
         <div class="navbar-links">
-            <a href="admin-dashboard.jsp"><i class="fas fa-home"></i> Home</a>
-            <a href="#"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="admin-dashboard.jsp"><i class="fas fa-tractor"></i> Home</a>
+            <a href="#"><i class="fas fa-seedling"></i> About Us</a>
             <a href="#"><i class="fas fa-envelope"></i> Contact</a>
         </div>
     </div>
@@ -143,25 +147,25 @@
         <div class="services">
             <div class="service">
                 <a href="addProduct.jsp">
-                    <i class="fas fa-user-plus"></i>
+                    <i class="fas fa-plus-circle"></i>
                     <p>Add Product</p>
                 </a>
             </div>
             <div class="service">
                 <a href="viewProducts">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-boxes"></i>
                     <p>View All Products</p>
                 </a>
             </div>
             <div class="service">
                 <a href="#">
-                    <i class="fas fa-user-edit"></i>
+                    <i class="fas fa-edit"></i>
                     <p>Update Product</p>
                 </a>
             </div>
             <div class="service">
                 <a href="deleteProduct">
-                    <i class="fas fa-user-minus"></i>
+                    <i class="fas fa-trash-alt"></i>
                     <p>Delete Product</p>
                 </a>
             </div>
@@ -171,7 +175,7 @@
 
     <!-- Footer -->
     <footer>
-        &copy; 2024 Admin Dashboard
+        &copy; 2024 Farmer Support Dashboard - Empowering Rural Entrepreneurs
     </footer>
 
 </body>

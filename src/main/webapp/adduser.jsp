@@ -13,8 +13,8 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #00c4cc, #009aa3);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #d9f2d9, #8bc34a);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,9 +26,9 @@
             background: #fff;
             width: 90%;
             max-width: 450px;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 30px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             animation: fadeIn 0.8s ease-out;
             text-align: center;
         }
@@ -45,8 +45,8 @@
         }
 
         .form-container h1 {
-            font-size: 1.8rem;
-            color: #007f89;
+            font-size: 2rem;
+            color: #4caf50;
             margin-bottom: 20px;
             text-align: center;
         }
@@ -61,22 +61,26 @@
         .button-container {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
         }
 
         .button-container button {
-            background: #00c4cc;
+            background: #4caf50;
             color: #fff;
             font-size: 1rem;
             padding: 12px 20px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .button-container button:hover {
-            background: #007f89;
+            background: #388e3c;
+            transform: scale(1.05);
         }
 
         .footer {
@@ -85,14 +89,18 @@
         }
 
         .footer a {
-            color: #009aa3;
+            color: #6d4c41;
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s;
         }
 
         .footer a:hover {
-            color: #005f65;
+            color: #4e342e;
+        }
+
+        .icon {
+            font-size: 1.2rem;
         }
 
         /* Responsive Design */
@@ -102,20 +110,25 @@
             }
 
             .form-container h1 {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="form-container">
         <h1>Add New User</h1>
         <div class="button-container">
-            <button onclick="location.href='registerFarmer.jsp'">Farmer</button>
-            <button onclick="location.href='registerBuyer.jsp'">Buyer</button>
+            <button onclick="location.href='registerFarmer.jsp'">
+                <i class="fas fa-tractor icon"></i> Farmer
+            </button>
+            <button onclick="location.href='registerBuyer.jsp'">
+                <i class="fas fa-shopping-cart icon"></i> Buyer
+            </button>
         </div>
         <div class="footer">
-            <a href="manageUsers.jsp">Return to Home</a>
+            <a href="manageUsers.jsp"><i class="fas fa-arrow-left"></i> Return to Home</a>
         </div>
     </div>
 </body>

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.klef.jfsd.springboot.model.Admin;
 import com.klef.jfsd.springboot.model.Cart;
 import com.klef.jfsd.springboot.model.Farmer;
 import com.klef.jfsd.springboot.model.Product;
@@ -134,10 +135,10 @@ public class FarmerController {
         HttpSession session = request.getSession();
 
         Farmer loggedFarmer = (Farmer) session.getAttribute("farmer");
-        Object admin = session.getAttribute("admin"); // Assuming admin session object is set similarly
+        Admin admin = (Admin)session.getAttribute("admin");
 
         if (loggedFarmer == null && admin == null) {
-            mv.setViewName("farmer-login");
+            mv.setViewName("index");
             mv.addObject("message", "Please log in first!");
             return mv;
         }
@@ -145,10 +146,10 @@ public class FarmerController {
         List<Product> products;
 
         if (admin != null) {
-            // If admin is logged in, show all products
+            // Admin is logged in, show all products
             products = farmerService.viewAllProducts();
         } else {
-            // If farmer is logged in, show only their products
+            // Farmer is logged in, show only their products
             products = farmerService.viewProductsByFarmerId(loggedFarmer.getId());
         }
 
@@ -167,12 +168,12 @@ public class FarmerController {
         }
 
         if (admin != null) {
-            // Admin is logged in, allow deletion
+            // Admin is logged in, allow deletion of any product
             farmerService.deleteProduct(id);
         } else if (loggedFarmer != null) {
-            // Farmer is logged in, check ownership
+            // Farmer is logged in, check ownership before deletion
             Product product = farmerService.displayProductById(id);
-            if (product.getFarmer().getId().equals(loggedFarmer.getId())) {
+            if (product != null && product.getFarmer().getId().equals(loggedFarmer.getId())) {
                 farmerService.deleteProduct(id);
             } else {
                 return "redirect:/deleteProduct?error=not_authorized";

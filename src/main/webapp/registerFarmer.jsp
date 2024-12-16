@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmer Registration</title>
     <style>
-        /* Styling for responsiveness and visual appeal */
+        /* Global Styling */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -16,24 +16,23 @@
         }
 
         body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #f0f9ff, #c3e6ff);
+            color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #00c4cc, #009aa3);
-            color: #333;
         }
 
         .register-container {
-            width: 90%;
-            max-width: 400px;
-            padding: 30px;
             background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            animation: fadeIn 0.8s ease;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.6s ease-in-out;
         }
 
         @keyframes fadeIn {
@@ -41,61 +40,56 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .register-container h1 {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #009aa3;
-            margin-bottom: 10px;
+        .register-header {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
-        .register-container p {
+        .register-header h1 {
+            font-size: 1.8rem;
+            color: #007B5E;
+        }
+
+        .register-header p {
             font-size: 1rem;
             color: #555;
-            margin-bottom: 20px;
         }
 
         form {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 15px;
         }
 
         label {
             font-size: 0.9rem;
             color: #555;
-            width: 100%;
-            max-width: 400px;
-            text-align: left;
-            margin-bottom: 5px;
         }
 
-        input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+        input {
             width: 100%;
-            padding: 12px;
-            font-size: 1rem;
-            margin-bottom: 15px;
+            padding: 10px;
             border: 1px solid #ddd;
             border-radius: 8px;
-            transition: border 0.3s ease;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
         }
 
         input:focus {
-            border-color: #009aa3;
+            border-color: #007B5E;
             outline: none;
         }
 
         button {
-            width: 100%;
+            background-color: #007B5E;
+            color: #ffffff;
             padding: 12px;
             font-size: 1rem;
             font-weight: bold;
-            color: #ffffff;
-            background-color: #00c4cc;
             border: none;
             border-radius: 30px;
             cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 10px;
+            transition: background-color 0.3s ease;
         }
 
         button:disabled {
@@ -104,46 +98,48 @@
         }
 
         button:hover:enabled {
-            background-color: #007f89;
+            background-color: #005F47;
         }
 
         .footer {
             margin-top: 15px;
+            text-align: center;
             font-size: 0.9rem;
-            color: #777;
+            color: #555;
         }
 
         .footer a {
-            color: #009aa3;
+            color: #007B5E;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
 
         .footer a:hover {
-            color: #005f65;
+            color: #005F47;
+        }
+
+        .error-message, .strength-message {
+            font-size: 0.9rem;
+            margin-top: -10px;
+            margin-bottom: 10px;
         }
 
         .error-message {
             color: red;
-            font-size: 0.9rem;
-            margin-top: -15px;
-            margin-bottom: 15px;
-            display: none;
         }
 
         .strength-message {
-            font-size: 0.9rem;
-            color: #777;
-            margin-top: -10px;
-            margin-bottom: 10px;
+            color: #555;
         }
     </style>
 </head>
 <body>
     <div class="register-container">
-        <h1>Farmer Registration</h1>
-        <p>Join us to connect with buyers and sell your products easily.</p>
+        <div class="register-header">
+            <h1>Empower Farmers</h1>
+            <p>Join our platform to transform your crops into value-added products and connect globally.</p>
+        </div>
         <form id="registrationForm" action="insertfarmer" method="post">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
@@ -153,25 +149,22 @@
 
             <label for="contactno">Contact Number</label>
             <input type="number" id="contactno" name="contactno" placeholder="Enter your contact number" required oninput="validateContactLength()">
-            
-            
+
             <label for="location">Location</label>
             <input type="text" id="location" name="location" placeholder="Enter your location" required>
-            
-            <label for="upiid">UPIID</label>
-            <input type="text" id="upiid" name="upiid" placeholder="Enter your upi id" required>
-            
-            <label for="upiuname">UPI Uname</label>
-            <input type="text" id="upiuname" name="upiuname" placeholder="Enter your upi username" required>
-            
+
+            <label for="upiid">UPI ID</label>
+            <input type="text" id="upiid" name="upiid" placeholder="Enter your UPI ID" required>
+
+            <label for="upiuname">UPI Username</label>
+            <input type="text" id="upiuname" name="upiuname" placeholder="Enter your UPI username" required>
+
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Create a password" required>
-
             <div class="strength-message" id="strengthMessage"></div>
+
             <div class="error-message" id="errorMessage"></div>
-            
-            
-            
+
             <button type="submit" id="submitButton" disabled>Register</button>
         </form>
 
@@ -194,8 +187,8 @@
             if (/[A-Z]/.test(password)) strength++;
             if (/[a-z]/.test(password)) strength++;
             if (/[0-9]/.test(password)) strength++;
-            if (/[\W_]/.test(password)) strength++;
-            
+            if (/\W|_/.test(password)) strength++;
+
             if (strength === 5) return "Strong";
             if (strength >= 3) return "Moderate";
             return "Weak";
@@ -204,16 +197,14 @@
         function validateForm() {
             errorMessage.style.display = 'none';
 
-            // Check if all fields are filled
-            if (!registrationForm.username.value || !registrationForm.password.value || 
-              	!registrationForm.email.value || !registrationForm.contactno.value) {
+            if (!registrationForm.username.value || !registrationForm.password.value ||
+                !registrationForm.email.value || !registrationForm.contactno.value) {
                 errorMessage.textContent = 'Please fill out all fields.';
                 errorMessage.style.display = 'block';
                 submitButton.disabled = true;
                 return;
             }
 
-            // Check contact number length
             if (contactField.value.length !== 10) {
                 errorMessage.textContent = 'Contact number must be exactly 10 digits.';
                 errorMessage.style.display = 'block';
@@ -221,7 +212,6 @@
                 return;
             }
 
-            // Check password strength
             const passwordStrength = checkPasswordStrength(passwordField.value);
             if (passwordStrength === "Weak") {
                 strengthMessage.textContent = "Password is weak. Use a mix of uppercase, lowercase, numbers, and special characters.";
@@ -233,12 +223,10 @@
                 strengthMessage.textContent = "Password is strong.";
             }
 
-            // Enable submit button if all validations pass and password is strong
             errorMessage.style.display = 'none';
             submitButton.disabled = false;
         }
 
-        // Real-time validation of contact number length
         function validateContactLength() {
             if (contactField.value.length > 10) {
                 contactField.value = contactField.value.slice(0, 10);
@@ -246,7 +234,6 @@
             validateForm();
         }
 
-        // Add event listeners for validation on input changes
         registrationForm.addEventListener('input', validateForm);
     </script>
 </body>

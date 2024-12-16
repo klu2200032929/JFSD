@@ -18,23 +18,32 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #00c4cc, #009aa3);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #f4f4f4, #a3d977);
             color: #333;
             padding: 20px;
         }
 
         h3 {
-            color: #009aa3;
+            color: #3b7419;
             font-size: 2rem;
             margin-bottom: 10px;
+            text-align: center;
         }
 
         h5 {
-            color: #007f89;
+            color: #558b2f;
             font-size: 1.5rem;
             margin: 20px 0 10px;
             text-decoration: underline;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h5::before {
+            content: '\1F33D'; /* Corn emoji for farmers */
+            font-size: 1.2rem;
         }
 
         table {
@@ -45,7 +54,7 @@
             background-color: #ffffff;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
 
         th, td {
@@ -55,29 +64,41 @@
         }
 
         th {
-            background-color: #009aa3;
+            background-color: #6d9e47;
             color: #ffffff;
             font-weight: bold;
         }
 
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #f9fdf4;
         }
 
         tr:hover {
-            background-color: #e0f7fa;
+            background-color: #d7f0c3;
         }
 
-        .table-title {
-            text-align: center;
+        .footer {
             margin-top: 20px;
-            font-size: 1.2rem;
-            color: #555;
+            font-size: 1rem;
+        }
+
+        .footer a {
+            color: #558b2f;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .footer a::before {
+            content: '\21A9'; /* Left arrow for back link */
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
-    <h3>View All Customers</h3>
+    <h3>Support Farmers and Buyers</h3>
 
     <h5>Farmers</h5>
     <table class="table table-striped">
@@ -118,9 +139,9 @@
             </tr>
         </c:forEach>
     </table>
-    
+
     <div class="footer">
-            <a href="manageUsers.jsp">Go back to Home</a>
+        <a href="manageUsers.jsp">Go back to Home</a>
     </div>
 </body>
 </html>

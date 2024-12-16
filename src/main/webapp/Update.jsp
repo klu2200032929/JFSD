@@ -173,7 +173,7 @@
         </form>
 
         <div class="footer">
-            <a href="admin-dashboard.jsp">Go back to Home</a>
+            <a href="manageUsers.jsp">Go back to Home</a>
         </div>
     </div>
 </body>
