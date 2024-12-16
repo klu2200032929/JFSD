@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +24,9 @@
             padding: 10px 20px;
             position: fixed;
             top: 0;
-            width: 97%;
+            width: 100%;
             z-index: 1000;
+            box-sizing: border-box;
         }
 
         .navbar-links {
@@ -61,7 +61,7 @@
             color: #388e3c;
         }
 
-        /* Service Icons Stack */
+        /* Services Section */
         .services {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -114,44 +114,88 @@
             color: white;
         }
 
-		/* Dropdown Container */
-		.dropdown {
-		    position: relative;
-		    display: inline-block;
-		}
-		
-		/* Dropdown Content (the pop-up menu) */
-		.dropdown-content {
-		    display: none;
-		    position: absolute;
-		    background-color: #388e3c;  /* Green color for the dropdown */
-		    min-width: 160px;
-		    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-		    z-index: 1;
-		    right: 0;
-		    border-radius: 8px;
-		}
-		
-		/* Links inside the dropdown */
-		.dropdown-content a {
-		    color: white;
-		    padding: 12px 16px;
-		    text-decoration: none;
-		    display: block;
-		    font-size: 16px;
-		}
-		
-		/* Change color when hovering over the links */
-		.dropdown-content a:hover {
-		    background-color: #4de352;  /* Lighter green when hovered */
-		    border-radius: 8px;
-		}
-		
-		/* Display the dropdown content when hovered */
-		.dropdown:hover .dropdown-content {
-		    display: block;
-		}
+        /* Dropdown Container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
+        /* Dropdown Content (the pop-up menu) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #388e3c;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 0;
+            border-radius: 8px;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+
+        /* Change color when hovering over the links */
+        .dropdown-content a:hover {
+            background-color: #4de352;
+            border-radius: 8px;
+        }
+
+        /* Display the dropdown content when hovered */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 1200px) {
+            .services {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .navbar-links a {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .navbar-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .navbar-links a {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .services {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .navbar-links a {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+
+            footer {
+                font-size: 12px;
+                padding: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -162,15 +206,14 @@
             <a href="#"><i class="fas fa-home"></i> Home</a>
             <a href="AboutUs1.jsp"><i class="fas fa-info-circle"></i> About Us</a>
             <a href="ContactUs1.jsp"><i class="fas fa-envelope"></i> Contact Us</a>
-			<div class="dropdown">
-			    <a href="javascript:void(0)"><i class="fas fa-user-circle"></i> Profile</a>
-			    <div class="dropdown-content">
-			        <a href="BuyerProfile">View Profile</a>
-			        <a href="editProfile.jsp">Edit Profile</a>
-			        <a href="buyerlogout">Logout</a>
-			    </div>
-			</div>
-
+            <div class="dropdown">
+                <a href="javascript:void(0)"><i class="fas fa-user-circle"></i> Profile</a>
+                <div class="dropdown-content">
+                    <a href="BuyerProfile">View Profile</a>
+                    <a href="editProfile.jsp">Edit Profile</a>
+                    <a href="buyerlogout">Logout</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -184,7 +227,7 @@
                 <i class="fas fa-th-list"></i>
                 <p>Product Browsing</p>
             </a>
-           	<a href="orderPlacement.jsp" class="service">
+            <a href="orderPlacement.jsp" class="service">
                 <i class="fas fa-cart-plus"></i>
                 <p>Order Placement & Payment</p>
             </a>
