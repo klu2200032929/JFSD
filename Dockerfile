@@ -1,16 +1,15 @@
-# Build stage with Maven
+# Use Maven to build the app
 FROM maven:3.9.4-eclipse-temurin-17 AS build
 WORKDIR /app
-COPY pom.xml .
-COPY src ./src
+COPY . .
 RUN mvn clean package -DskipTests
 
-# Runtime stage with JDK
+# Use JDK for running the app
 FROM eclipse-temurin:17-jdk
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
-# Render expects your app to listen on $PORT
-EXPOSE 8080
+# Use the same port as in application.properties
+EXPOSE 4654
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
