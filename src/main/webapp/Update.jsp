@@ -153,7 +153,7 @@
     <div class="register-container">
         <h1>Update User</h1>
         <p>Modify the details of an existing user.</p>
-        <form id="updateUserForm" action="updateuser" method="post">
+        <form id="updateUserForm" action="https://jfsd.onrender.com/updateuser" method="post">
             <label for="userId">User ID</label>
             <input type="number" id="userId" name="userId" placeholder="Enter user ID" required>
 

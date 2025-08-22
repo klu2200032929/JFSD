@@ -135,7 +135,7 @@
         <img src="farmer-login.png" alt="Login Icon" class="visual-header">
         <h1>Welcome Back!</h1>
         <p class="tagline">Log in to access your farmer account and manage your products.</p>
-        <form id="loginForm" action="checkfarmerlogin" method="post">
+        <form id="loginForm" action="https://jfsd.onrender.com/checkfarmerlogin" method="post">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
 

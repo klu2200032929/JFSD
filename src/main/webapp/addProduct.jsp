@@ -182,7 +182,7 @@
     <!-- Main Container -->
     <div class="container">
         <h2>Add New Product</h2>
-        <form action="insertproduct" method="POST" enctype="multipart/form-data">
+		<form action="https://jfsd.onrender.com/insertproduct" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="productName">Product Name</label>
                 <input type="text" name="pname" required placeholder="Enter product name">

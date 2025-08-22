@@ -148,7 +148,7 @@
                 </a>
             </div>
             <div class="service">
-                <a href="ViewAllUsers">
+                <a href="https://jfsd.onrender.com/ViewAllUsers">
                     <i class="fas fa-users"></i>
                     <p>View All Users</p>
                 </a>
@@ -160,7 +160,7 @@
                 </a>
             </div>
             <div class="service">
-                <a href="deleteuser">
+                <a href="https://jfsd.onrender.com/deleteuser">
                     <i class="fas fa-trash"></i>
                     <p>Delete User</p>
                 </a>

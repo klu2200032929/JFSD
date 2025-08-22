@@ -141,7 +141,7 @@
         <img src="farmer-icon.png" alt="Farmer Icon" class="visual-header">
         <h1>Join Our Farmer Community</h1>
         <p class="tagline">Empowering farmers to create value-added products and reach global markets.</p>
-        <form id="registrationForm" action="insertfarmer" method="post">
+        <form id="registrationForm" action="https://jfsd.onrender.com/insertfarmer" method="post">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
 

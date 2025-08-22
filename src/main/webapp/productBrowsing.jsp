@@ -216,18 +216,18 @@
         <div class="product-list">
             <c:forEach items="${products}" var="product">
                 <div class="product-card">
-                    <img src="displayproductimage?id=${product.id}" alt="Product Image">
+                    <img src="https://jfsd.onrender.com/displayproductimage?id=${product.id}" alt="Product Image">
                     <h3><c:out value="${product.name}"></c:out></h3>
                     <p><strong>Product ID:</strong> <c:out value="${product.id}"></c:out></p>
                     <p><strong>Description:</strong> <c:out value="${product.description}"></c:out></p>
                     <p class="price"><strong>Price:</strong> Rs. <c:out value="${product.cost}"></c:out></p>
                     <p><strong>Farmer Contact:</strong> <c:out value="${product.farmer.contactno}"></c:out></p>
                     <div class="button-container">
-                        <form action="addtocart" method="post" onsubmit="showSuccessMessage(event)">
+                        <form action="https://jfsd.onrender.com/addtocart" method="post" onsubmit="showSuccessMessage(event)">
                             <input type="hidden" name="productId" value="${product.id}">
                             <button type="submit">Add to Cart</button>
                         </form>
-                        <a href="/order/${product.id}">Order</a>
+                        <a href="https://jfsd.onrender.com/order/${product.id}">Order</a>
                     </div>
                 </div>
             </c:forEach>

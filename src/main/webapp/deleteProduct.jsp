@@ -161,10 +161,10 @@
                     <td><c:out value="${product.cost}"></c:out></td>
                     <td><c:out value="${product.description}"></c:out></td>
                     <td>
-                        <img src="displayproductimage?id=${product.id}" alt="Product Image" height="42px" width="58px">
+                        <img src="https://jfsd.onrender.com/displayproductimage?id=${product.id}" alt="Product Image" height="42px" width="58px">
                     </td>
                     <td>
-                        <a href='<c:url value="delete1?id=${product.id}"/>' class="delete-btn">
+                        <a href='<c:url value="https://jfsd.onrender.com/delete1?id=${product.id}"/>' class="delete-btn">
                             <i class="fas fa-trash"></i> <!-- Trash icon for delete action -->
                         </a>
                     </td>

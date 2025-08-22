@@ -124,7 +124,7 @@
     <div class="login-container">
         <h1>Admin Login</h1>
         <p>Welcome, Admin! Please enter your credentials to access your admin dashboard.</p>
-        <form id="adminLoginForm" action="checkadminlogin" method="post">
+        <form id="adminLoginForm" action="https://jfsd.onrender.com/checkadminlogin" method="post">
             <label for="username">Username</label>
             <input type="text" name="auname" placeholder="Enter your username" required>
 

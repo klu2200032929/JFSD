@@ -141,7 +141,7 @@
         <img src="buyer-icon.png" alt="Buyer Icon" class="visual-header">
         <h1>Join Our Buyer Community</h1>
         <p class="tagline">Connecting buyers with quality products and empowering the marketplace.</p>
-        <form id="registrationForm" action="insertbuyer" method="post">
+		<form id="registrationForm" action="https://jfsd.onrender.com/insertbuyer" method="post">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
@@ -156,7 +156,9 @@
 
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Create a password" required>
-
+			<div class="error-message" id="errorMessage"></div>
+			<div class="strength-message" id="strengthMessage"></div>
+			
             <label for="confirmPassword">Confirm Password</label>
             <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
 

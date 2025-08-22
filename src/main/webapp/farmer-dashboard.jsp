@@ -208,9 +208,9 @@
             <div class="dropdown">
                 <a href="javascript:void(0)"><i class="fas fa-user-circle"></i> Profile</a>
                 <div class="dropdown-content">
-                    <a href="viewProfile">View Profile</a>
-                    <a href="editProfile">Edit Profile</a>
-                    <a href="farmerlogout">Logout</a>
+                    <a href="https://jfsd.onrender.com/viewProfile">View Profile</a>
+                    <a href="https://jfsd.onrender.com/editProfile">Edit Profile</a>
+                    <a href="https://jfsd.onrender.com/farmerlogout">Logout</a>
                 </div>
             </div>
         </div>
@@ -230,13 +230,13 @@
                 </a>
             </div>
             <div class="service">
-                <a href="viewProducts">
+                <a href="https://jfsd.onrender.com/viewProducts">
                     <i class="fas fa-list"></i>
                     <p>View Products</p>
                 </a>
             </div>
             <div class="service">
-                <a href="deleteProduct">
+                <a href="https://jfsd.onrender.com/deleteProduct">
                     <i class="fas fa-trash"></i>
                     <p>Delete Product</p>
                 </a>
@@ -278,7 +278,7 @@
                 </a>
             </div>
             <div class="service">
-                <a href="productSearch">
+                <a href="https://jfsd.onrender.com/productSearch">
                     <i class="fas fa-search"></i>
                     <p>Product Browsing & Searching</p>
                 </a>

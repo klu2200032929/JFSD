@@ -114,7 +114,7 @@
                 <td><c:out value="${farmer.location}"></c:out></td>
                 <td><c:out value="${farmer.contactno}"></c:out></td>
                 <td>
-                    <a href='<c:url value="delete?id=${farmer.id}"></c:url>'>
+                    <a href='<c:url value="https://jfsd.onrender.com/delete?id=${farmer.id}"></c:url>'>
                         <i class="fas fa-trash-alt action-icon" title="Delete Farmer"></i>
                     </a>
                 </td>
@@ -140,7 +140,7 @@
                 <td><c:out value="${buyer.location}"></c:out></td>
                 <td><c:out value="${buyer.contactno}"></c:out></td>
                 <td>
-                    <a href='<c:url value="delete?id=${buyer.id}"></c:url>'>
+                    <a href='<c:url value="https://jfsd.onrender.com/delete?id=${buyer.id}"></c:url>'>
                         <i class="fas fa-trash-alt action-icon" title="Delete Buyer"></i>
                     </a>
                 </td>

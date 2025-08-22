@@ -131,7 +131,7 @@
         <img src="buyer-icon.png" alt="Buyer Icon" class="visual-header">
         <h1>Buyer Login</h1>
         <p>Welcome, Buyer! Please enter your credentials to access your account.</p>
-        <form id="buyerLoginForm" action="checkbuyerlogin" method="post">
+		<form id="buyerLoginForm" action="https://jfsd.onrender.com/checkbuyerlogin" method="post">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
 

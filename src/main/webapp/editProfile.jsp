@@ -112,7 +112,7 @@
     <!-- Edit Profile Container -->
     <div class="edit-profile-container">
         <h2>Edit Your Profile</h2>
-        <form action="update" method="post">
+        <form action="https://jfsd.onrender.com/update" method="post">
         	<div class="form-group">
                 <label for="id">ID:</label>
                 <input type="number" id="id" name="id" value="<%=farmer.getId()%>" readonly required>

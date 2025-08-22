@@ -100,11 +100,11 @@
                         <p>Order ID: <c:out value="${order.id}" /></p>
                         <p>Total: $<c:out value="${order.total}" /></p>
                         <div class="actions">
-                            <form action="cancelOrder" method="post" style="display:inline;">
+                            <form action="https://jfsd.onrender.com/cancelOrder" method="post" style="display:inline;">
                                 <input type="hidden" name="orderId" value="${order.id}">
                                 <button type="submit" class="button">Cancel Order</button>
                             </form>
-                            <form action="viewOrderDetails" method="get" style="display:inline;">
+                            <form action="https://jfsd.onrender.com/viewOrderDetails" method="get" style="display:inline;">
                                 <input type="hidden" name="orderId" value="${order.id}">
                                 <button type="submit" class="button">View Details</button>
                             </form>

@@ -227,7 +227,7 @@
     <div class="container">
         <h2>Order Details</h2>
         <div class="order-card">
-            <img src="/productimage?id=${product.id}" alt="Product Image">
+            <img src="https://jfsd.onrender.com/productimage?id=${product.id}" alt="Product Image">
             <div class="order-info">
                 <h3>${product.name}</h3>
                 <p><strong>Product ID:</strong> ${product.id}</p>
@@ -237,7 +237,7 @@
                 <p><strong>Farmer Contact:</strong> ${product.farmer.contactno}</p>
             </div>
             <div class="button-container">
-                <form method="post" action="/confirm/${product.id}">
+                <form method="post" action="https://jfsd.onrender.com/confirm/${product.id}">
                     <div class="quantity-selector">
                         <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" min="1" value="1" required>

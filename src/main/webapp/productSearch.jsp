@@ -98,7 +98,7 @@
         <h2>Find Your Desired Products</h2>
         
         
-        <form method="post" action="displayproduct">
+        <form method="post" action="https://jfsd.onrender.com/displayproduct">
         	<label>Select Product By Id</label>
         	<select name="id" class="form-select" required>
         		<option value="">--Select--</option>

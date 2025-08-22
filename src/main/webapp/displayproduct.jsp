@@ -161,7 +161,7 @@
     <div class="container">
         <h3>Product Information</h3>
         <div class="product-details">
-            <img src="displayproductimage?id=${product.id}" alt="Product Image">
+            <img src="https://jfsd.onrender.com/displayproductimage?id=${product.id}" alt="Product Image">
             <p><span class="label">ID:</span> <c:out value="${product.id}" /></p>
             <p><span class="label">Name:</span> <c:out value="${product.name}" /></p>
             <p><span class="label">Cost:</span> Rs. <c:out value="${product.cost}" /></p>

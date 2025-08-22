@@ -202,7 +202,7 @@
     <div class="profile-container">
         <div class="profile-header">
             <div class="profile-pic">
-                <img src="https://via.placeholder.com/120" alt="Profile Picture"> <!-- Replace with actual profile picture -->
+				<img src="https://jfsd.onrender.com/displayFarmerImage?id=<%=farmer.getId()%>" alt="Profile Picture">
             </div>
             <div class="profile-details">
                 <h2><%=farmer.getUsername()%></h2>

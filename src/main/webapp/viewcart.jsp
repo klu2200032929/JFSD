@@ -137,13 +137,13 @@
                 <td><c:out value="${cart.product.description}"/></td>
                 <td><c:out value="${cart.product.farmer.contactno}"/></td>
                 <td>
-                    <img src="displayproductimage?id=${cart.product.id}" alt="Product Image">
+                    <img src="https://jfsd.onrender.com/displayproductimage?id=${cart.product.id}" alt="Product Image">
                 </td>
                 <td>
-                    <a href="<c:url value='delete5?id=${cart.id}'/>">Delete</a>
+                    <a href="<c:url value='https://jfsd.onrender.com/delete5?id=${cart.id}'/>">Delete</a>
                 </td>
                 <td>
-                    <a href="/order/${cart.product.id}">Buy</a>
+                    <a href="https://jfsd.onrender.com/order/${cart.product.id}">Buy</a>
                 </td>
             </tr>
         </c:forEach>

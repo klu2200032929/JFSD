@@ -152,7 +152,7 @@
                 </a>
             </div>
             <div class="service">
-                <a href="viewProducts">
+                <a href="https://jfsd.onrender.com/viewProducts">
                     <i class="fas fa-boxes"></i>
                     <p>View All Products</p>
                 </a>
@@ -164,7 +164,7 @@
                 </a>
             </div>
             <div class="service">
-                <a href="deleteProduct">
+                <a href="https://jfsd.onrender.com/deleteProduct">
                     <i class="fas fa-trash-alt"></i>
                     <p>Delete Product</p>
                 </a>

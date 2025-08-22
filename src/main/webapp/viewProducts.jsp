@@ -207,7 +207,7 @@
         <div class="product-list">
             <c:forEach items="${products}" var="product">
                 <div class="product-card">
-                    <img src="displayproductimage?id=${product.id}" alt="Product Image">
+                    <img src="https://jfsd.onrender.com/displayproductimage?id=${product.id}" alt="Product Image">
                     <h3><c:out value="${product.name}"></c:out></h3>
                     <p><strong>Product ID:</strong> <c:out value="${product.id}"></c:out></p>
                     <p><strong>Description:</strong> <c:out value="${product.description}"></c:out></p>
